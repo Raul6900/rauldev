@@ -1,0 +1,124 @@
+.contact {
+  min-height: 100vh;
+  background: transparent !important; /* Lăsăm particulele să se vadă, dacă ai setat asta în App.js */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 20px;
+font-family: system-ui, -apple-system, sans-serif;
+}
+
+.form-container {
+  width: 100%;
+  max-width: 550px; /* Am redus lățimea pentru ca input-urile să nu pară prea lungi */
+  background: rgba(255, 255, 255, 0.03);
+  padding: 50px 40px;
+  border-radius: 24px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+/* Header-ul Formularului */
+.contact-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+
+.contact-title span {
+  color: #6a3ce8; /* Culoarea ta mov de accent */
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.contact-header p {
+  color: #94a3b8;
+  font-size: 0.95rem;
+}
+
+/* Structura Formularului */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.input-group label {
+  color: #e2e8f0;
+  font-size: 0.95rem;
+  font-weight: 500;
+  margin-left: 5px; /* Aliniază puțin textul label-ului cu rotunjimea input-ului */
+}
+
+/* Stiluri pentru câmpurile de text (Input și Textarea) */
+.input-group input,
+.input-group textarea {
+  width: 100%;
+  padding: 16px;
+  background: rgba(0, 0, 0, 0.2); /* Un fundal ușor mai închis decât cardul */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  color: #ffffff;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+
+/* Previne redimensionarea orizontală care strică designul */
+.input-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* Culoarea placeholder-ului */
+.input-group input::placeholder,
+.input-group textarea::placeholder {
+  color: #64748b;
+}
+
+/* Efect de Focus - când utilizatorul dă click să scrie */
+.input-group input:focus,
+.input-group textarea:focus {
+  border-color: #6a3ce8;
+  box-shadow: 0 0 0 3px rgba(106, 60, 232, 0.2); /* O aură mov subtilă */
+  background: rgba(0, 0, 0, 0.3);
+}
+
+/* Butonul de Trimitere */
+.submit-btn {
+  margin-top: 10px;
+  padding: 16px;
+  background:#6a3ce8; 
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.submit-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(232, 60, 157, 0.3); 
+  background:#e83c9d;
+  transition: 0.5 ease;
+}
+
+/* Responsive pentru mobile */
+@media (max-width: 600px) {
+  .form-container {
+    padding: 40px 25px;
+  }
+  .contact-title {
+    font-size: 2rem;
+  }
+}

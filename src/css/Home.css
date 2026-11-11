@@ -1,0 +1,184 @@
+/* Import fonts for the clean tech look and the elegant italic highlight */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Playfair+Display:ital@1&display=swap');
+html, body {
+  overflow-x: hidden; /* Prevent horizontal scrolling at the root */
+
+}
+.home {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  margin-top: 10px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  text-align: center;
+  background-color: transparent;
+  padding: 0 20px;
+  box-sizing: border-box; /* Ensures padding doesn't add to width */
+}
+
+/* Responsive Name Title */
+.name {
+  display: flex;
+  flex-wrap: wrap; /* Allows letters to wrap on very small screens if needed */
+  justify-content: center;
+  align-items: center;
+  font-size: clamp(3rem, 12vw, 5.5rem); /* Dynamic sizing: Min 3rem, Max 5.5rem */
+  font-weight: 800;
+  letter-spacing: -2px;
+  margin: 0 0 1.5rem 0;
+  line-height: 1.1;
+}
+/* Cursorul de tip text */
+.cursor {
+  color: #6a3ce8; /* Culoarea ta mov de accent */
+  font-weight: 200;
+  margin-left: 2px;
+}
+
+/* Dacă vrei ca literele să aibă spațiul lor natural */
+.name span {
+  display: inline-block;
+}
+.greeting {
+  color: #a3a3a3;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.name {
+  font-size: 5.5rem;
+  font-weight: 800;
+  letter-spacing: -2px; /* Pulls letters closer together like the image */
+  margin: 0 0 1.5rem 0;
+  line-height: 1;
+}
+
+.role-badge {
+  /* Glassmorphism effect */
+  background: rgba(255, 255, 255, 0.02); 
+  backdrop-filter: blur(10px);
+  
+  /* Subtle colored border */
+  border: 1px solid rgba(106, 60, 232, 0.3); 
+  
+  color: #e2e8f0; /* Slightly off-white for a softer, more elegant look */
+  padding: 0.5rem 1.4rem;
+  border-radius: 50px;
+  
+  /* Typography upgrades */
+  font-weight: 500;
+  font-size: 0.95rem; /* Slightly smaller looks more premium */
+  letter-spacing: 1.5px;
+  text-transform: uppercase; /* Gives it a technical label feel */
+  
+  margin-bottom: 3rem;
+  
+  /* Flexbox to align the dot and text */
+  display: inline-flex; 
+  align-items: center;
+  gap: 12px; /* Space between dot and text */
+  
+  /* Subtle inner and outer shadow */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3), 
+              inset 0 0 10px rgba(106, 60, 232, 0.1);
+  transition: all 0.3s ease;
+}
+
+/* Optional: Slight hover effect */
+.role-badge:hover {
+  border-color: rgba(232, 60, 157, 0.5); /* Shifts border to pink on hover */
+  background: rgba(255, 255, 255, 0.04);
+  transform: translateY(-2px);
+}
+
+
+.description {
+  color: #b3b3b3;
+  font-size: clamp(1rem, 4vw, 1.5rem); /* Scales down on mobile */
+  max-width: 550px;
+  line-height: 1.6;
+  margin-bottom: 3rem;
+}
+.highlight {
+  font-family: 'Playfair Display', serif; /* Elegant serif font */
+  font-style: italic;
+  color: #6a3ce8; /* Orange-red accent */
+}
+
+.cta-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.connect-btn {
+  position: relative;
+  /* Animate a gradient that includes both your theme colors */
+  background: linear-gradient(90deg, #6a3ce8, #e83c9d, #6a3ce8);
+  background-size: 200% auto;
+  
+  color: white;
+  border: none;
+  /* Perfect proportion: slightly less tall, wider sides */
+  padding: 1rem 2.8rem; 
+  border-radius: 50px; /* Pill shape */
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  cursor: pointer;
+  
+  /* Layered shadows for a default soft neon glow */
+  box-shadow: 0 0 15px rgba(106, 60, 232, 0.4), 
+              0 0 30px rgba(232, 60, 157, 0.2);
+  
+  /* Continuous movement of the gradient */
+  animation: shine 3s linear infinite; 
+  
+  /* Smooth transition for the glow effect */
+  transition: box-shadow 0.3s ease;
+}
+
+/* Make sure the link inside doesn't have default blue browser styling */
+.connect-btn a {
+  color: white;
+  text-decoration: none;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+
+.connect-btn:hover {
+  /* Brighter, larger neon glow on hover */
+  box-shadow: 0 0 10px rgba(106, 60, 232, 0.6), 
+              0 0 20px rgba(232, 60, 157, 0.5), 
+              0 0 40px rgba(232, 60, 157, 0.3);
+}
+
+/* Keyframes for the continuous background light movement */
+@keyframes shine {
+  to {
+    background-position: 200% center;
+  }
+}
+.home-wrapper {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden; /* Prevents horizontal scroll */
+  background: #0c0c0c;
+}
+
+#tsparticles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0; /* În spatele conținutului */
+}
+.marketing{
+ position: absolute;
+ left: -9999px;
+}

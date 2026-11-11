@@ -1,0 +1,108 @@
+.portfolio{
+      min-height: 100vh;
+      color:#4018b1;
+display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(12, 12, 12) !important; /* Deep Purple-Black base */
+  flex-direction: column;
+  
+}
+.project-card {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  padding: 20px;
+  max-width: 500px;
+  color: white;
+  font-family: sans-serif;
+  z-index: 1;
+  border: 1px solid transparent;
+}
+.title-portfolio{
+  color:red;
+}
+.project-image img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tag {
+  background-color: #2a2a2a;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  margin-right: 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.description {
+  color: #a0a0a0; /* Dimmed text color */
+  line-height: 1.5;
+  margin-top: 15px;
+}
+
+.external-icon {
+  width: 24px;
+  height: 24px;
+  fill: none;
+  stroke: #E83C9D;
+  stroke-width: 2;
+}
+.project-card:hover {
+  transform: translateY(-8px); /* Lifts the card up */
+ transition: 0.3 ease-in;
+border-style: solid;
+  border-color: rgba(106, 60, 232, 0.3);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(255, 255, 255, 0.05);
+}
+/* --- Mobile Devices (Phones) --- */
+@media (max-width: 600px) {
+  .portfolio {
+    padding: 20px; /* Prevents card from touching screen edges */
+  }
+
+  .project-card {
+    max-width: 100%; /* Card fills the screen width */
+    padding: 15px;   /* Slightly tighter padding for small screens */
+  }
+
+  h1 {
+    font-size: 1.8rem; /* Shrinks the title so it doesn't wrap weirdly */
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .project-header h2 {
+    font-size: 1.2rem; /* Keeps title and icon on one line */
+  }
+}
+
+/* --- Tablets (Optional) --- */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .project-card {
+    max-width: 80%; /* Gives the card a bit more breathing room on tablets */
+  }
+}
+
+.my-title{
+   font-size: 2.8rem;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.layout {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}

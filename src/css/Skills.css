@@ -1,0 +1,138 @@
+.skills {
+        min-height: 100vh;
+  padding: 100px 20px;
+  background: transparent !important; /* Lăsăm particulele să se vadă, dacă ai setat asta în App.js */
+  /* Dacă nu folosești particule pe tot site-ul, pune înapoi: background: #0c0c0c; */
+  color: #e2e8f0;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.skills-title {
+  color: #6a3ce8;
+  font-size: 2.8rem;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 60px; 
+   text-align: center;
+}
+
+
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Cardul principal pentru categorie */
+.skill-card {
+  background: rgba(255, 255, 255, 0.02);
+  padding: 40px;
+  border-radius: 24px;
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.4);
+  transition: transform 0.4s ease, border-color 0.4s ease;
+  text-align: left;
+}
+
+.skill-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(106, 60, 232, 0.3);
+}
+
+.skill-card h3 {
+  font-size: 1.2rem;
+  color: white;
+  margin-bottom: 30px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  border-bottom: 2px solid rgba(106, 60, 232, 0.5);
+  padding-bottom: 15px;
+  display: inline-block;
+}
+
+/* Containerul pentru skill-uri */
+.skill-items {
+  display: grid;
+  /* This creates 2 equal columns. You can change to 1fr 1fr 1fr for three. */
+  grid-template-columns: repeat(2, 1fr); 
+  gap: 12px;
+  width: 100%;
+}
+
+/* 2. Make sure badges take up the full width of their grid cell */
+.skill-badge {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Keeps icons/text aligned to the left */
+  gap: 10px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #cbd5e1;
+  background: rgba(255, 255, 255, 0.04);
+  padding: 10px 15px;
+  border-radius: 12px; /* Square-ish rounded corners look cleaner in grids */
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  white-space: nowrap; /* Prevents text from breaking into 2 lines inside the badge */
+}
+
+/* 3. Mobile Adjustment */
+@media (max-width: 480px) {
+  .skill-items {
+    grid-template-columns: 1fr; /* One badge per row on very small screens */
+  }
+}
+
+.skill-badge svg {
+  font-size: 1.3rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* --- Efecte de Hover (Culori Brand) --- */
+.skill-badge:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: white;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.skill-badge:hover svg {
+  transform: scale(1.1);
+}
+
+/* Culori specifice fiecărei tehnologii la hover */
+.hover-html:hover svg { color: #E34F26; }
+.hover-css:hover svg { color: #1572B6; }
+.hover-js:hover svg { color: #F7DF1E; }
+.hover-git:hover svg { color: #F05032; }
+.hover-github:hover svg { color: #ffffff; }
+
+.hover-react:hover svg { color: #61DAFB; }
+.hover-router:hover svg { color: #CA4245; } /* Culoarea React Router */
+.hover-framer:hover svg { color: #0055FF; } /* Culoarea Framer */
+.hover-bs:hover svg { color: #7952B3; }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .skills-grid {
+    grid-template-columns: 1fr; /* Pe mobile, cardurile stau unul sub altul */
+    gap: 30px;
+  }
+}
+
+@media (max-width: 600px) {
+  .skills {
+    padding: 60px 15px;
+  }
+  .skill-card {
+    padding: 30px 20px;
+  }
+  .skill-badge {
+    padding: 10px 16px;
+    font-size: 0.9rem;
+  }
+}

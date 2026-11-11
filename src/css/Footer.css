@@ -1,0 +1,23 @@
+.footer {
+  padding: 20px 20px;
+  background: #060606; /* Același fundal ca la Skills/Contact */
+  text-align: center;
+  color: #94a3b8; /* Gri discret */
+  font-size: 0.9rem;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.highlight-name {
+  color: #6a3ce8; /* Mov-ul tău de accent */
+  font-weight: 600;
+}
+
+.footer-tagline {
+  font-size: 0.8rem;
+  opacity: 0.7;
+}

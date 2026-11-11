@@ -1,0 +1,70 @@
+/* 1. Global Reset & Box Model */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 2. Root Styles */
+html {
+  scroll-behavior: smooth;
+  background-color: rgb(12, 12, 12); /* Deep Purple-Black base */
+  color: #F1F0F5; /* Soft Off-White text */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+body {
+  width: 100%;
+  position: relative;
+  overflow-x: hidden; /* Plasa de siguranță */
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* 3. Typography & Links */
+a {
+  color: inherit; /* Folosește culoarea părintelui sau cea definită în html */
+  text-decoration: none;
+}
+.dot::after {
+  content: ".";
+  color: #e83c9d;
+}
+
+/* 4. Navigation */
+.navbar-logo {
+  list-style: none;
+}
+
+.project-info {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* Pushes the tech stack to the bottom if descriptions vary in length */
+  padding: 1rem 0; /* Adjust depending on your existing card padding */
+}
+
+/* Styles for the new tech stack container */
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap; /* Allows tags to wrap to the next line if there are many */
+  gap: 0.5rem;
+  margin-top: auto; /* Pushes the tags to the bottom of the card */
+  padding-top: 1rem;
+}
+
+/* Styles for individual tech badges */
+.tech-badge {
+  background-color: rgba(100, 100, 100, 0.1); /* Subtle gray background - adjust to match your theme */
+  color: #555; /* Adjust to match your text color (use white/light gray if dark mode) */
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.35rem 0.75rem;
+  border-radius: 50px; /* Makes them pill-shaped */
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  transition: background-color 0.2s ease;
+}
+
+/* Optional: Slight hover effect on the badges */
+.tech-badge:hover {
+  background-color: rgba(100, 100, 100, 0.2); 
+}

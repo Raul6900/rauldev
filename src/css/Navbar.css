@@ -1,0 +1,256 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 2rem; /* Redus de la 3em pentru mai mult spațiu */
+  position: fixed;
+  top: 20px;
+  width: 90%; /* Creștem la 90% pentru a respira mai bine pe ecrane medii */
+  max-width: 1200px; /* Limităm lățimea pe ecrane UltraWide */
+  
+  left: 50%;
+  transform: translateX(-50%); /* Mod de centrare mai stabil */
+  margin: 0; 
+
+  background: rgba(24, 24, 24, 0.05);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 32px rgba(106, 60, 232, 0.3);
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+/* Logo */
+.navbar-logo h1 {
+  font-size: 1.5rem;
+  margin: 0;
+  letter-spacing: 2px;
+  font-weight: 700;
+}
+
+/* =========================================
+   Desktop Links (Hidden on Mobile)
+   ========================================= */
+.desktop-links {
+  display: flex;
+  flex-direction: row;
+  gap: 1.2rem; 
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.desktop-links li {
+  display: flex;
+  background: rgba(0, 0, 0, 0.541); /* Subtle resting background */
+  border-radius: 15px;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); 
+}
+
+.desktop-links li a {
+  font-weight: 500;
+  padding: 0.6rem 1.2rem; 
+  display: block;
+  width: 100%;
+  text-align: center;
+  transition: color 0.3s ease;
+}
+
+/* Hover Effect for Desktop Links */
+.desktop-links li:hover {
+  background: #6d31a5; /* Vibrant purple */
+  transform: translateY(-2px); 
+  box-shadow: 0 4px 15px rgba(168, 85, 247, 0.5); /* Stronger purple glow */
+}
+
+.desktop-links li:hover a {
+  color: #ffffff; /* Crisp white on hover for contrast */
+}
+
+/* =========================================
+   Desktop Links & Sliding Animation
+   ========================================= */
+.desktop-links {
+  position: relative; /* CRUCIAL: Keeps the sliding indicator trapped inside the nav */
+  display: flex;
+  flex-direction: row;
+  gap: 1.2rem; 
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* The Sliding Box Indicator */
+.nav-indicator {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  background: #E83C9D; /* Your vibrant purple */
+  border-radius: 15px; 
+  box-shadow: 0 4px 15px rgba(168, 85, 247, 0.5);
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  z-index: 0; /* Keeps it behind the text */
+  pointer-events: none; /* Prevents it from blocking clicks */
+  box-sizing: border-box;
+}
+
+.desktop-links li {
+  position: relative;
+  z-index: 1; /* Sits on top of the indicator */
+  background: rgba(0, 0, 0, 0.541); 
+  border-radius: 15px;
+  transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.desktop-links li a {
+  position: relative;
+  z-index: 2; /* Highest layer for clicking */
+  font-weight: 500;
+  padding: 0.6rem 1.5rem; 
+  width: 100%;
+  text-align: center;
+  transition: color 0.3s ease;
+  
+  /* Perfect Centering Fix */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box; 
+}
+
+/* --- Hover Effects for INACTIVE links --- */
+.desktop-links li:hover {
+  background: #E83C9D; 
+  transform: translateY(-2px); 
+  box-shadow: 0 4px 15px rgba(168, 85, 247, 0.5); 
+}
+
+.desktop-links li:hover a {
+  color: #ffffff; 
+}
+
+/* --- Active State Logic (Fixes the double layer) --- */
+.desktop-links li.text-active {
+  background: transparent; /* Makes the item see-through so the purple indicator shows */
+}
+
+.desktop-links li.text-active a {
+  color: #ffffff;
+}
+
+.desktop-links li.text-active:hover {
+  transform: translateY(0); /* Stops the active item from shifting up */
+  box-shadow: none; /* Removes the extra shadow so it doesn't clash with the indicator */
+}
+
+/* =========================================
+   Mobile Menu Base & Hamburger Button
+   ========================================= */
+.mobile-menu {
+  display: none; 
+}
+
+.hamburger {
+  display: none; 
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+  z-index: 2000; 
+}
+
+.hamburger .bar {
+  width: 25px;
+  height: 3px;
+  background-color: #F1F0F5;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+}
+
+.hamburger.active .bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.active .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+@media (max-width: 855px) {
+  .navbar {
+    padding: 15px 1.5em;
+    width: 90%; 
+  }
+
+  .hamburger {
+    display: flex; 
+  }
+
+  .desktop-links {
+    display: none; 
+  }
+
+  .mobile-menu {
+    display: flex; 
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    top: -20px; 
+    left: 50%; 
+    width: 100vw;
+    height: 100vh;
+    transform: translateX(-150%); 
+    background: rgba(13, 9, 20, 0.98); 
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); 
+    z-index: 1500;
+  }
+
+  .mobile-menu.active {
+    transform: translateX(-50%); 
+  }
+
+  .mobile-menu li {
+    background: transparent; 
+    margin: 1.5rem 0;
+    transition: all 0.3s ease;
+  }
+
+  .mobile-menu li a {
+    font-weight: 500;
+    font-size: 2rem; 
+    letter-spacing: 2px;
+    display: block;
+    transition: color 0.3s ease;
+  }
+
+  .mobile-menu li:hover {
+    transform: scale(1.1); 
+  }
+
+  .mobile-menu li:hover a {
+    color: #a855f7; 
+  }
+}
+
+/* Persistent Active State for Mobile Links */
+.mobile-menu li.mobile-active-link a {
+  color: #a855f7; 
+}
+
+.navbar-logo:hover{
+  color:#6d31a5;
+  transition: 0.2s ease-in;
+}
