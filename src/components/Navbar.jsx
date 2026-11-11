@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from "react";
 import "../css/Navbar.css";
 
+const navLinks = ["about", "portfolio", "skills", "services", "contact"];
+
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -11,9 +13,6 @@ function Navbar() {
   
   // Refs to measure our <li> elements
   const linksRef = useRef([]);
-
-  // Our list of sections
-  const navLinks = ["about", "portfolio", "skills", "services", "contact"];
 
   const toggleMenu = () => setIsOpen(!isOpen);
   const closeMenu = () => setIsOpen(false);
